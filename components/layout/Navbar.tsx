@@ -29,13 +29,13 @@ export function Navbar() {
   return (
     <header
       className={clsx(
-        "sticky top-0 z-40 transition-all duration-300",
+        "sticky top-0 z-40 bg-bg-deep border-b border-border transition-all duration-300",
         scrolled
-          ? "bg-bg-base/70 backdrop-blur-xl border-b border-border"
-          : "bg-transparent",
+          ? "shadow-[0_14px_40px_-28px_rgba(0,0,0,0.75)] backdrop-blur-xl"
+          : "shadow-none",
       )}
     >
-      <div className="mx-auto max-w-[1320px] px-5 sm:px-8 h-16 flex items-center justify-between">
+      <div className="h-16 w-full pl-3 pr-5 sm:pl-4 sm:pr-8 flex items-center justify-between">
         <Link href="/" className="shrink-0" aria-label="VyloMedia home">
           <Logo />
         </Link>
