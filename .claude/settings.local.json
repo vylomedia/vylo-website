@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/HP/AppData/Local/Temp/claude/C--Users-HP-netcruise/dc9e7db4-7e1a-49fb-a032-ce9f4c980352/tasks/**)",
+      "Bash(node -e \"const i = require\\('lucide-react'\\); console.log\\(Object.keys\\(i\\).filter\\(k=>/linkedin|youtube|twitter|instagram|x$|xtwitter/i.test\\(k\\)\\).join\\('\\\\n'\\)\\)\")",
+      "Bash(playwright-cli goto *)",
+      "Bash(playwright-cli resize *)",
+      "Bash(playwright-cli screenshot *)",
+      "Bash(playwright-cli open *)",
+      "Bash(playwright-cli console *)",
+      "Bash(playwright-cli eval *)",
+      "Bash(playwright-cli reload *)"
+    ]
+  }
+}
