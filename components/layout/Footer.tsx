@@ -4,33 +4,33 @@ import { SocialIcons } from "@/components/brand/SocialIcons";
 
 const cols = [
   {
-    title: "Product",
+    title: "Services",
     links: [
-      { label: "Overview", href: "/product" },
-      { label: "Features", href: "/product#features" },
+      { label: "What you get", href: "/#included" },
+      { label: "Paid media", href: "/#included" },
+      { label: "Creative analysis", href: "/#included" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Integrations", href: "/product#integrations" },
-      { label: "Agent Mode", href: "/product#agent" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Templates", href: "/#templates" },
+      { label: "Fit call", href: "/#included" },
       { label: "Playbooks", href: "#" },
       { label: "Benchmarks", href: "#" },
-      { label: "Changelog", href: "#" },
-      { label: "Help center", href: "#" },
+      { label: "Case studies", href: "#" },
+      { label: "Contact", href: "#" },
     ],
   },
   {
     title: "Compare",
     links: [
-      { label: "vs Triple Whale", href: "#" },
-      { label: "vs Supermetrics", href: "#" },
-      { label: "vs Motion", href: "#" },
-      { label: "vs Madgicx", href: "#" },
-      { label: "vs Northbeam", href: "#" },
+      { label: "vs hiring", href: "/#included" },
+      { label: "vs agency retainers", href: "/#included" },
+      { label: "vs dashboards", href: "/#included" },
+      { label: "vs AI tools", href: "/#included" },
+      { label: "vs freelancers", href: "/#included" },
     ],
   },
   {
@@ -53,8 +53,8 @@ export function Footer() {
           <div>
             <Logo />
             <p className="text-text-muted mt-4 max-w-xs text-[15px]">
-              The AI co-pilot for paid media teams. Analyze, optimize, and
-              launch — all from one prompt.
+              Boutique paid media for US SMBs that deserve senior attention -
+              backed by AI that handles the heavy lifting.
             </p>
             <SocialIcons />
           </div>

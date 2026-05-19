@@ -79,13 +79,13 @@ export function BookDemoModal({
               </div>
             ) : (
               <>
-                <p className="eyebrow mb-3">Book a demo</p>
+                <p className="eyebrow mb-3">Book a fit call</p>
                 <h3 className="text-2xl font-semibold text-text tracking-[-0.01em]">
-                  See VyloMedia on your ad accounts
+                  See if VyloMedia is the right growth partner
                 </h3>
                 <p className="text-text-muted mt-2 text-[15px]">
                   {reason ??
-                    "A 25-minute walkthrough tailored to your stack — no slides, real data."}
+                    "A 25-minute conversation about your ad stack, growth goals, and where senior attention would make the biggest difference."}
                 </p>
                 <form onSubmit={submit} className="mt-6 flex flex-col gap-3">
                   <Field label="Work email" name="email" type="email" required />
@@ -102,7 +102,7 @@ export function BookDemoModal({
                     placeholder="e.g. $50k"
                   />
                   <Button type="submit" size="lg" className="mt-3 w-full">
-                    Request demo
+                    Request fit call
                   </Button>
                   <p className="text-text-faint text-xs text-center mt-1">
                     We&apos;ll never share your data. Cancel any time.

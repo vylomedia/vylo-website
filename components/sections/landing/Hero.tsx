@@ -6,45 +6,45 @@ import {
   BarChart3,
   Compass,
   FileBarChart,
+  LineChart,
+  Search,
   Sparkles,
   Wand2,
-  Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { GlowBackdrop } from "@/components/ui/GlowBackdrop";
 import { useBookDemo } from "@/components/modals/BookDemoProvider";
-import { platforms } from "@/lib/copy";
 
 const prompts = [
-  "Why did ROAS drop last week across Meta?",
-  "Find my best-performing hooks of the last 30 days",
+  "What's the fastest path to $50K MRR for a US wellness brand?",
   "Pause anything under 1.2 ROAS for 48 hours",
-  "Generate a weekly client report and send to Slack",
+  "Where are we losing market share to competitors this month?",
+  "What hooks are working for DTC food brands in Q1?",
+  "Diagnose the CAC spike from last Tuesday",
 ];
 
 const chips = [
-  { label: "Launch & manage ads", icon: Zap, pill: "NEW" as const },
+  { label: "Market share analysis", icon: LineChart },
   { label: "Audit account", icon: BarChart3 },
-  { label: "Weekly report", icon: FileBarChart },
+  { label: "Diagnose performance drops", icon: Sparkles },
   { label: "Analyze creatives", icon: Wand2 },
-  { label: "Competitor research", icon: Compass },
+  { label: "Competitor research", icon: Search },
+  { label: "Weekly client report", icon: FileBarChart },
 ];
 
 export function Hero() {
-  const [pi, setPi] = useState(0);
   const [ti, setTi] = useState(0);
 
-  useEffect(() => {
-    const t = setInterval(() => setPi((v) => (v + 1) % platforms.length), 2800);
-    return () => clearInterval(t);
-  }, []);
   useEffect(() => {
     const t = setInterval(() => setTi((v) => (v + 1) % prompts.length), 3400);
     return () => clearInterval(t);
   }, []);
 
   const { open } = useBookDemo();
+  const scrollToIncluded = () => {
+    document.getElementById("included")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section className="relative overflow-hidden">
@@ -58,50 +58,30 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-[12px] text-text-muted">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
-            Built for the next generation of paid-media teams
+            Boutique Paid Media Agency, for US SMBs who deserve senior attention
           </span>
         </motion.div>
 
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-[clamp(36px,5.4vw,68px)] font-semibold tracking-[-0.025em] leading-[1.04]">
-            The AI co-pilot to win
-            <span className="block mt-2 sm:mt-3 h-[1.15em] relative">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={pi}
-                  initial={{ y: 16, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -16, opacity: 0 }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
-                  className="absolute inset-0 flex items-center justify-center gap-3"
-                >
-                  <span
-                    className="h-9 w-9 sm:h-11 sm:w-11 rounded-full grid place-items-center"
-                    style={{
-                      background: platforms[pi].color + "22",
-                      boxShadow: `0 0 0 1px ${platforms[pi].color}55 inset`,
-                    }}
-                    aria-hidden
-                  >
-                    <span
-                      className="h-3 w-3 sm:h-4 sm:w-4 rounded-sm"
-                      style={{ background: platforms[pi].color }}
-                    />
-                  </span>
-                  <span style={{ color: platforms[pi].color }}>
-                    {platforms[pi].name}
-                  </span>
-                </motion.span>
-              </AnimatePresence>
+            Your fractional Head of Paid / Growth Lead / Performance Marketer /
+            Media Buyer
+            <span className="block mt-2 text-accent">
+              for one tenth the cost of a bad hire.
             </span>
           </h1>
-          <p className="mt-7 text-text-muted text-lg leading-relaxed max-w-2xl mx-auto">
-            VyloMedia plugs into your ad stack, finds what&apos;s working, and ships
-            the next move for you — so your team stops reporting and starts winning.
+          <p className="mt-7 text-text-muted text-lg leading-relaxed max-w-3xl mx-auto">
+            We&apos;ve run paid media for 150 Brands including McDonald&apos;s,
+            PepsiCo, Loreal, Diageo, and HelloFresh for the last 10 years. Now
+            we bring that caliber of work to SMBs at a time- backed by AI that
+            handles the heavy lifting on data, monitoring, and reporting.
           </p>
-          <div className="mt-9 flex justify-center">
+          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" onClick={() => open()}>
-              Start Free Trial
+              Book a fit call
+            </Button>
+            <Button size="lg" variant="outline" onClick={scrollToIncluded}>
+              See what&apos;s included
             </Button>
           </div>
         </div>
@@ -112,6 +92,14 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="mt-14 max-w-2xl mx-auto"
         >
+          <div className="mb-6 text-center">
+            <h2 className="text-[clamp(24px,3vw,36px)] font-semibold tracking-[-0.02em]">
+              We built our own AI co-pilot.
+            </h2>
+            <p className="mt-2 text-text-muted">
+              Trained on what actually matters to US SMBs.
+            </p>
+          </div>
           <div className="glass-strong rounded-3xl p-3 shadow-2xl">
             <div className="flex items-center gap-2 px-4 py-3 bg-surface-1 rounded-2xl border border-border">
               <div className="flex-1 relative h-7">
@@ -141,9 +129,12 @@ export function Hero() {
                 <span className="h-5 w-5 rounded-full bg-accent/15 grid place-items-center">
                   <Sparkles className="h-3 w-3 text-accent" />
                 </span>
-                Connect your accounts to VyloMedia
+                <span>
+                  &#9889; Trained on US SMB market data &middot; Built and tuned
+                  by us
+                </span>
               </div>
-              <div className="text-[12px] text-text-faint">2-min setup</div>
+              <Compass className="h-4 w-4 text-text-faint shrink-0" />
             </div>
           </div>
 
@@ -155,11 +146,6 @@ export function Hero() {
               >
                 <c.icon className="h-3.5 w-3.5 text-accent" />
                 {c.label}
-                {c.pill && (
-                  <span className="ml-1 text-[10px] px-1.5 py-0.5 rounded-full bg-accent text-white font-semibold">
-                    {c.pill}
-                  </span>
-                )}
               </span>
             ))}
           </div>

@@ -123,36 +123,36 @@ export const templates = [
 
 export const landingFaq = [
   {
-    q: "What does VyloMedia actually do?",
-    a: "Think of it as a paid-media analyst that never sleeps. It plugs into your ad accounts, audits performance, finds patterns across your creatives and your competitors, and executes the changes you approve.",
+    q: "What does VyloMedia actually do for an SMB?",
+    a: "VyloMedia acts as your fractional paid-media lead: strategy, account builds, daily optimization, creative diagnosis, competitor research, and plain-English reporting, backed by an AI co-pilot built for the work that should not eat human time.",
   },
   {
-    q: "How long does it take to connect my accounts?",
-    a: "Two minutes. OAuth into Meta, Google, TikTok, LinkedIn, GA4, and Shopify. We start producing recommendations the moment data lands.",
+    q: "Who is this best for?",
+    a: "US SMBs that are spending enough on ads for performance decisions to matter, but do not want the cost, risk, or management load of hiring a full senior growth team.",
   },
   {
-    q: "Can my team collaborate inside VyloMedia?",
-    a: "Yes — workspaces, roles, shared chats, and exportable briefs are first-class. Most agencies onboard 5–20 client accounts in week one.",
+    q: "Which channels can you run?",
+    a: "Meta, Google, TikTok, LinkedIn, and the supporting analytics stack around them. The fit call will clarify which channels deserve focus first.",
   },
   {
-    q: "How does it generate recommendations?",
-    a: "VyloMedia combines a model fine-tuned on three years of paid-media outcomes with deterministic checks against your live account data. Every recommendation cites the metric and time-range it&apos;s based on.",
+    q: "How does the AI co-pilot fit in?",
+    a: "AI handles monitoring, data checks, benchmark comparisons, draft reports, and pattern analysis. A senior operator reviews the signals, makes the judgment calls, and writes the client-facing narrative.",
   },
   {
-    q: "Which platforms do you support?",
-    a: "Meta, Google, TikTok, LinkedIn, X, Reddit, Pinterest, Snapchat, YouTube. For analytics: GA4, Mixpanel, Amplitude, Shopify, Stripe, Klaviyo, and the major warehouses.",
+    q: "Is this a software subscription or an agency service?",
+    a: "It is a boutique paid-media service with AI infrastructure behind it. You are buying senior operating attention, not another dashboard to manage.",
   },
   {
-    q: "Can I try it before rolling it out to my team?",
-    a: "There&apos;s a 7-day free trial with full feature access. No card required. Workspaces start free; paid tiers kick in only when you invite your team.",
+    q: "What happens on the fit call?",
+    a: "We review your current channels, ad spend, growth goals, team gaps, and the fastest places senior paid-media attention could improve performance.",
   },
   {
-    q: "How is this different from Triple Whale or Motion?",
-    a: "Those are dashboards. VyloMedia is an agent — it reads the dashboards for you, decides, and (with your approval) acts.",
+    q: "How is this different from hiring a media buyer?",
+    a: "You get one senior operator plus AI-assisted analysis, reporting, creative pattern mining, and competitor tracking for a fraction of the cost of a bad full-time hire.",
   },
   {
-    q: "Can I make campaign changes directly from chat?",
-    a: "Yes. Pause an ad set, edit a budget, draft a new creative variant, or launch a fresh campaign — all from the prompt. Each action shows a diff and waits for your approval.",
+    q: "Do you replace my internal team?",
+    a: "No. VyloMedia plugs into the team you already have, removes low-leverage reporting and diagnosis work, and gives your operators clearer next moves.",
   },
 ];
 

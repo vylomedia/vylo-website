@@ -8,8 +8,7 @@ import { useBookDemo } from "@/components/modals/BookDemoProvider";
 import { clsx } from "clsx";
 
 const links = [
-  { href: "/product", label: "Product" },
-  { href: "/product#features", label: "Features" },
+  { href: "/#included", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/#faq", label: "FAQ" },
 ];
@@ -56,7 +55,7 @@ export function Navbar() {
             className="hidden sm:inline-flex"
             onClick={() => open()}
           >
-            Book Demo
+            Book a fit call
           </Button>
           <button
             className="md:hidden h-9 w-9 grid place-items-center rounded-full border border-border text-text"
@@ -87,7 +86,7 @@ export function Navbar() {
                 open();
               }}
             >
-              Book Demo
+              Book a fit call
             </Button>
           </div>
         </div>
