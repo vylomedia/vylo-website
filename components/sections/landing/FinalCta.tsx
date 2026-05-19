@@ -5,13 +5,17 @@ import { Button } from "@/components/ui/Button";
 import { useBookDemo } from "@/components/modals/BookDemoProvider";
 
 export function FinalCta({
-  title = "From research to results.",
-  lead = "Stop screenshotting. Stop reporting. Let the AI find what works — and ship the next move.",
+  title = "Senior paid-media attention, without the full-time hire.",
+  lead = "Bring the operating rhythm, creative judgment, and reporting clarity of a top-tier growth team into your SMB - backed by AI that handles the heavy lifting.",
 }: {
   title?: string;
   lead?: string;
 }) {
   const { open } = useBookDemo();
+  const scrollToIncluded = () => {
+    document.getElementById("included")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section className="section-pad relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
@@ -37,10 +41,10 @@ export function FinalCta({
         <p className="text-text-muted text-lg mt-5 max-w-2xl mx-auto">{lead}</p>
         <div className="mt-9 flex items-center justify-center gap-3">
           <Button size="lg" onClick={() => open()}>
-            Book a Demo
+            Book a fit call
           </Button>
-          <Button size="lg" variant="outline" onClick={() => open()}>
-            Start free trial
+          <Button size="lg" variant="outline" onClick={scrollToIncluded}>
+            See what&apos;s included
           </Button>
         </div>
       </Container>

@@ -14,9 +14,9 @@ const hostGrotesk = Host_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "VyloMedia — The AI co-pilot for paid media teams",
+  title: "VyloMedia - Boutique Paid Media Agency for US SMBs",
   description:
-    "VyloMedia plugs into your ad stack, finds what's working, and ships the next move for you. Analyze, optimize, and launch ads with one AI agent.",
+    "VyloMedia brings senior paid-media strategy and an AI co-pilot to US SMBs that need sharper growth without the cost of a bad hire.",
 };
 
 export default function RootLayout({
