@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -52,27 +53,47 @@ export function WhatYouGet() {
   const { open } = useBookDemo();
 
   return (
-    <section id="included" className="section-pad bg-bg-soft">
+    <section id="included" className="scroll-mt-20 bg-bg-soft py-16 sm:py-20">
       <Container>
-        <div className="max-w-3xl">
-          <p className="eyebrow mb-4">What you actually get</p>
-          <h2 className="text-[clamp(32px,4.2vw,56px)] font-semibold tracking-[-0.02em] leading-[1.05]">
-            Five jobs. One senior operator. AI doing the heavy lifting.
-          </h2>
-          <p className="mt-5 text-text-muted text-lg leading-relaxed">
-            The work an agency would split across a strategist, an analyst, a
-            media buyer, a creative researcher, and a reporting specialist -
-            delivered by one person who&apos;s done it for Fortune 500 Global
-            brands &amp; US SMBs, with a custom AI co-pilot handling the parts
-            that don&apos;t need a human.
-          </p>
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div>
+            <p className="eyebrow mb-4">What you actually get</p>
+            <h2 className="text-[clamp(32px,4.2vw,56px)] font-semibold tracking-[-0.02em] leading-[1.05]">
+              Five jobs. One senior operator. AI doing the heavy lifting.
+            </h2>
+          </div>
+          <div>
+            <p className="text-text-muted text-lg leading-relaxed">
+              The work an agency would split across a strategist, analyst,
+              media buyer, creative researcher, and reporting specialist -
+              delivered by one operator who has run Fortune 500 and US SMB
+              accounts, with a custom AI co-pilot handling the parts that do
+              not need a human.
+            </p>
+            <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+              {["5 roles covered", "150 brands run", "1 senior lead"].map(
+                (stat) => (
+                  <div
+                    key={stat}
+                    className="rounded-2xl border border-border bg-white px-3 py-3 text-sm font-semibold text-text"
+                  >
+                    {stat}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
         </div>
 
-        <div className="mt-14 grid gap-6">
+        <div className="mt-10 grid gap-6">
           {offers.map((offer, index) => (
-            <article
+            <motion.article
               key={offer.title}
-              className="grid lg:grid-cols-[0.95fr_1.05fr] gap-0 overflow-hidden rounded-3xl border border-border bg-white shadow-[0_1px_2px_rgba(30,29,27,0.04),0_24px_60px_-34px_rgba(30,29,27,0.2)]"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.45, delay: Math.min(index * 0.06, 0.18) }}
+              className="group grid gap-0 overflow-hidden rounded-3xl border border-border bg-white shadow-[0_1px_2px_rgba(30,29,27,0.04),0_24px_60px_-34px_rgba(30,29,27,0.2)] transition-transform duration-300 hover:-translate-y-1 lg:grid-cols-[0.8fr_1.2fr]"
             >
               <div className="p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
                 <div className="mb-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent/12 text-accent font-semibold">
@@ -89,16 +110,23 @@ export function WhatYouGet() {
                   {offer.hire}
                 </p>
               </div>
-              <div className="bg-bg-base border-t lg:border-t-0 lg:border-l border-border p-4 sm:p-6">
-                <Image
-                  src={offer.image}
-                  alt={offer.alt}
-                  width={800}
-                  height={500}
-                  className="h-full min-h-[260px] w-full rounded-2xl object-contain"
-                />
+              <div className="overflow-hidden bg-bg-base border-t lg:border-t-0 lg:border-l border-border p-3 sm:p-4">
+                <motion.div
+                  initial={{ scale: 1.03 }}
+                  whileInView={{ scale: 1.08 }}
+                  transition={{ duration: 1.1, ease: "easeOut" }}
+                  className="h-full min-h-[320px] w-full rounded-2xl bg-white"
+                >
+                  <Image
+                    src={offer.image}
+                    alt={offer.alt}
+                    width={800}
+                    height={500}
+                    className="h-full min-h-[320px] w-full rounded-2xl object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                </motion.div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 

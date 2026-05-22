@@ -24,6 +24,13 @@ const prompts = [
   "Diagnose the CAC spike from last Tuesday",
 ];
 
+const roles = [
+  "Head of Paid",
+  "Growth Lead",
+  "Performance Marketer",
+  "Media Buyer",
+];
+
 const chips = [
   { label: "Market share analysis", icon: LineChart },
   { label: "Audit account", icon: BarChart3 },
@@ -35,9 +42,14 @@ const chips = [
 
 export function Hero() {
   const [ti, setTi] = useState(0);
+  const [ri, setRi] = useState(0);
 
   useEffect(() => {
     const t = setInterval(() => setTi((v) => (v + 1) % prompts.length), 3400);
+    return () => clearInterval(t);
+  }, []);
+  useEffect(() => {
+    const t = setInterval(() => setRi((v) => (v + 1) % roles.length), 2200);
     return () => clearInterval(t);
   }, []);
 
@@ -49,12 +61,12 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden">
       <GlowBackdrop />
-      <Container className="relative z-10 pt-20 sm:pt-28 pb-24">
+      <Container className="relative z-10 pt-12 sm:pt-16 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center mb-7"
+          className="flex justify-center mb-5"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-[12px] text-text-muted">
             <Sparkles className="h-3.5 w-3.5 text-accent" />
@@ -63,20 +75,33 @@ export function Hero() {
         </motion.div>
 
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-[clamp(36px,5.4vw,68px)] font-semibold tracking-[-0.025em] leading-[1.04]">
-            Your fractional Head of Paid / Growth Lead / Performance Marketer /
-            Media Buyer
-            <span className="block mt-2 text-accent">
-              for one tenth the cost of a bad hire.
+          <h1 className="text-[clamp(34px,4.8vw,60px)] font-semibold tracking-[-0.025em] leading-[1.04]">
+            Your fractional
+            <span className="relative mt-1 grid h-[1.08em] place-items-center text-accent">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={roles[ri]}
+                  initial={{ y: 16, opacity: 0, filter: "blur(6px)" }}
+                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                  exit={{ y: -16, opacity: 0, filter: "blur(6px)" }}
+                  transition={{ duration: 0.42, ease: "easeOut" }}
+                  className="col-start-1 row-start-1"
+                >
+                  {roles[ri]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            <span className="block mt-2">
+              for a fraction of what a bad hire costs.
             </span>
           </h1>
-          <p className="mt-7 text-text-muted text-lg leading-relaxed max-w-3xl mx-auto">
+          <p className="mt-5 text-text-muted text-[17px] leading-relaxed max-w-3xl mx-auto">
             We&apos;ve run paid media for 150 Brands including McDonald&apos;s,
             PepsiCo, Loreal, Diageo, and HelloFresh for the last 10 years. Now
-            we bring that caliber of work to SMBs at a time- backed by AI that
+            we bring that caliber of work to SMBs at a time - backed by AI that
             handles the heavy lifting on data, monitoring, and reporting.
           </p>
-          <div className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button size="lg" onClick={() => open()}>
               Book a fit call
             </Button>
@@ -90,17 +115,17 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="mt-14 max-w-2xl mx-auto"
+          className="mt-9 max-w-2xl mx-auto"
         >
-          <div className="mb-6 text-center">
-            <h2 className="text-[clamp(24px,3vw,36px)] font-semibold tracking-[-0.02em]">
+          <div className="mb-4 text-center">
+            <h2 className="text-[clamp(22px,2.4vw,30px)] font-semibold tracking-[-0.02em]">
               We built our own AI co-pilot.
             </h2>
-            <p className="mt-2 text-text-muted">
+            <p className="mt-1 text-sm text-text-muted">
               Trained on what actually matters to US SMBs.
             </p>
           </div>
-          <div className="glass-strong rounded-3xl p-3 shadow-2xl">
+          <div className="glass-strong rounded-2xl p-3 shadow-2xl">
             <div className="flex items-center gap-2 px-4 py-3 bg-surface-1 rounded-2xl border border-border">
               <div className="flex-1 relative h-7">
                 <AnimatePresence mode="wait">
@@ -138,7 +163,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
             {chips.map((c) => (
               <span
                 key={c.label}
