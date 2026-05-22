@@ -2,6 +2,8 @@
 
 :root {
   /* Supermetrics-inspired light palette */
+  --font-host-grotesk: "Avenir Next", "Satoshi", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+
   --bg-base: #ffffff;
   --bg-soft: #f7f7f8;
   --bg-soft-2: #f1f1f3;
@@ -50,7 +52,7 @@
   --color-surface-1: var(--surface-1);
   --color-surface-2: var(--surface-2);
   --color-surface-3: var(--surface-3);
-  --font-sans: var(--font-host-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-host-grotesk);
   --radius-card: 1.5rem;
 }
 
@@ -58,7 +60,7 @@ html,
 body {
   background: var(--bg-base);
   color: var(--text);
-  font-family: var(--font-host-grotesk), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-host-grotesk);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
